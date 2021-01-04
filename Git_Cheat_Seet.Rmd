@@ -1,0 +1,103 @@
+---
+title: "Git Cheat Seet"
+author: "Makson Vinicio"
+date: "28/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## O que e o Git?
+
+Git e um sistema de versionamento, que permite registrar o historico de edicoes de qualquer tipo de arquivo.
+
+## O que e o GitHub?
+
+O GitHub e uma plataforma de hospedagem de codigo-fonte e arquivos integrada a ferramenta Git. Ele permite a integralizacao de mutiplos usuarios a multiplos projetos por meio de repositorios.
+
+### Links importantes:
+- [GitHub](https://github.com/)
+- [Download Git](https://git-scm.com/downloads)
+- [Download GitHub Desktop](https://git-scm.com/downloads)
+- [Meu GitHub](https://github.com/MaksonViini)
+- [Curso de Git Curso em Video](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
+
+# *Cheats*
+
+### Configure a ferramenta
+
+Configura o nome que você quer ligado às suas transações de *commit*.
+```
+git config --global user.name "[nome]"
+```
+
+Configura o *email* que você quer ligado às suas transações de *commit*.
+```
+git config --global user.email "[endereco-de-email]"
+```
+
+### Criando repositórios
+
+Cria um novo repositório local com um nome especificado.
+```
+git init [nome-do-projeto]
+```
+
+Baixa um projeto e seu histórico de versão inteiro.
+```
+git clone [url]
+```
+
+### Refatore nomes de arquivos
+
+Remove o arquivo do diretório de trabalho e o prepara a remoção.
+```
+git rm [arquivo]
+```
+
+Remove o arquivo do controle de versão mas preserva o arquivo localmente.
+```
+git rm --cached [arquivo]
+```
+
+Muda o nome do arquivo e o prepara para o *commit*.
+```
+git mv [arquivo-original] [arquivo-renomeado]
+```
+
+### Faça mudanças
+
+Lista todos os arquivos novos ou modificados para serem commitados.
+```
+git status
+```
+
+Mostra diferenças no arquivo que ainda não foram preparadas.
+```
+git diff
+```
+
+Faz o snapshot de um arquivo na preparação para versionamento.
+```
+git add [arquivo]
+```
+
+Mostra a diferença entre arquivos preparados e suas últimas.
+```
+git diff --staged
+```
+
+Retira o arquivo da área de preparação, mas preserva seu conteúdo.
+```
+git reset [arquivo]
+```
+
+Grava o snapshot permanentemente do arquivo no histórico de versão.
+```
+git commit -m "[mensagem descritiva]"
+```
+
+### Mudanças em grupo
+
