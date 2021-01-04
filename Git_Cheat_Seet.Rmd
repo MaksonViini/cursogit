@@ -101,3 +101,21 @@ git commit -m "[mensagem descritiva]"
 
 ### Mudanças em grupo
 
+
+
+### Ordem do projeto ao commit
+
+1. Primeiro passo, criar um diretorio
+   - ```mkdir <nome da pasta>``` - Windows/Linux
+
+2. Entra na pasta 
+   - ```dir <nome da pasta> ``` - Windows
+   - ```cd <nome da pasta>``` - Linux
+3. Inicia o repositorio
+   - ```git init``` 
+4. Criar um arquivo para iniciar o versionamento
+   - Ex: ```exemplo.py ```
+5. Adicionar o arquivo no versionamento
+   - ```git add <nome do arquivo>```
+6. Dar o *commit*
+   - ```git commit -m <mensagem>``` 
