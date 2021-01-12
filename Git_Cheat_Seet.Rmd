@@ -1,7 +1,7 @@
 ---
 title: "Git Cheat Seet"
 author: "Makson Vinicio"
-date: "28/12/2020"
+date: "11/01/2021"
 output: pdf_document
 ---
 
@@ -11,11 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## O que e o Git?
 
-Git e um sistema de versionamento, que permite registrar o historico de edicoes de qualquer tipo de arquivo.
+Git é um sistema de versionamento, que permite registrar o histórico de edições de qualquer tipo de arquivo.
 
 ## O que e o GitHub?
 
-O GitHub e uma plataforma de hospedagem de codigo-fonte e arquivos integrada a ferramenta Git. Ele permite a integralizacao de mutiplos usuarios a multiplos projetos por meio de repositorios.
+O GitHub é uma plataforma de hospedagem de código-fonte e arquivos integrada à ferramenta Git. Ele permite a integralização de múltiplos usuários a múltiplos projetos por meio de repositórios.
 
 ### Links importantes:
 - [GitHub](https://github.com/)
@@ -79,7 +79,7 @@ Mostra diferenças no arquivo que ainda não foram preparadas.
 git diff
 ```
 
-Faz o snapshot de um arquivo na preparação para versionamento.
+Faz o *snapshot* de um arquivo na preparação para versionamento.
 ```
 git add [arquivo]
 ```
@@ -94,28 +94,103 @@ Retira o arquivo da área de preparação, mas preserva seu conteúdo.
 git reset [arquivo]
 ```
 
-Grava o snapshot permanentemente do arquivo no histórico de versão.
+Grava o *snapshot* permanentemente do arquivo no histórico de versão.
 ```
 git commit -m "[mensagem descritiva]"
 ```
 
 ### Mudanças em grupo
 
+Lista todos os *branches* locais no repositório atual
+```
+git branch
+```
 
+Cria um novo *branch*
+```
+git branch [nome-do-branch]
+```
 
-### Ordem do projeto ao commit
+Muda para o *branch* especificado e atualiza o diretório de trabalho
+```
+git checkout [nome-do-branch]
+```
 
-1. Primeiro passo, criar um diretorio
+Combina o histórico do *branch* especificado ao *branch* atual
+```
+git merge [nome-do-branch]
+```
+
+Exclui o *branch* especificado
+```
+git branch -d [nome-do-branch]
+```
+### Revise o histórico
+
+Lista o histórico de versões para o branch atual
+```
+git log
+```
+
+Mostra a diferença de conteúdo entre dois branches
+```
+git diff [primerio-branch]...[segundo-branch]
+```
+
+Retorna mudanças de metadata e conteúdo para o commit especificado
+```
+git show [commit]
+```
+
+### Desfaça commits
+
+Desfaz todos os commits depois de *[commit]*, preservando mudanças locais
+```
+git reset [commit]
+```
+
+Descarta todo histórico e mudanças para o commit especificado
+```
+git reset --hard [commit]
+```
+
+### Sincronize mudanças
+
+Baixe todo o histórico de um repositório remoto
+```
+git fetch [nome-remoto]
+```
+
+Combina o branch remoto ao branch local atual
+```
+git merge [nome-remoto]/[branch]
+```
+
+Envia todos os commits do branch local para o GitHub
+```
+git push [alias] [branch]
+```
+
+Baixa o histórico e incorpora as mudanças
+```
+git pull
+```
+
+## Ordem, do projeto ao *commit*
+
+1. Primeiro passo, criar um diretório
    - ```mkdir <nome da pasta>``` - Windows/Linux
 
-2. Entra na pasta 
+2. Entrar na pasta 
    - ```dir <nome da pasta> ``` - Windows
    - ```cd <nome da pasta>``` - Linux
-3. Inicia o repositorio
+3. Iniciar o repositório
    - ```git init``` 
-4. Criar um arquivo para iniciar o versionamento
+4. Criar um arquivo para inicia o versionamento
    - Ex: ```exemplo.py ```
 5. Adicionar o arquivo no versionamento
    - ```git add <nome do arquivo>```
 6. Dar o *commit*
    - ```git commit -m <mensagem>``` 
+7. Dar o *push*
+   - ```git push```
